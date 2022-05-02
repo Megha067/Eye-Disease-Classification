@@ -4,4 +4,6 @@
 
 <h2>Project Screenshots:</h2>
 
+![Image](https://drive.google.com/file/d/1d-F2MOdQbAQ_6dOtIYRYx9Uz2l_V4t-S/view?usp=sharing)
+
 <img src="https://drive.google.com/file/d/1d-F2MOdQbAQ_6dOtIYRYx9Uz2l_V4t-S/view?usp=sharing" alt="project-screenshot" width="200" height="200/">
