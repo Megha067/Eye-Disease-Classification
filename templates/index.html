@@ -1,0 +1,211 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bx-analyse'></i>
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <a href="/">
+                <i class='bx bx-grid-alt'></i>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="/">Home</a></li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href="#information">
+                <i class='bx bx-info-circle'></i>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#information">Info</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#about">
+                <i class='bx bx-group'></i>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#about">About us</a></li>
+            </ul>
+        </li>
+
+
+    </ul>
+</div>
+
+<section class="home-section">
+    <div class="home-content">
+        <span class="text">My Ophthalmologist</span>
+    </div>
+</section>
+<!-- Index section   -->
+<section class="site-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 banner-image">
+                <img src="/static/image/home.jpg" alt="banner-img" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-12 site-title">
+                <h3 class="title-text">Hey there!!!</h3>
+                <p class="title-text">
+                    You are having OCT image then choose photo and get to know wheather you are having CNV , DME or
+                    DRUSEN or you are
+                    normal.
+                </p>
+                <!-- <form  method="POST">
+                        <input type="file" multiple>
+                         <p>Drag your files here or click in this area.</p> 
+                        <button type="submit">Upload</button>
+                    </form> -->
+
+                <form id="upload-file" method="post" enctype="multipart/form-data">
+                    <label for="imageUpload" class="upload-label">
+                        Choose...
+                    </label>
+                    <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg, .jfif">
+                </form>
+
+                <div class="image-section" style="display:none;">
+                    <div class="img-preview">
+                        <div id="imagePreview">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+                    </div>
+                </div>
+
+                <div class="loader" style="display:none;"></div>
+
+                <h4 id="result">
+                    <span> </span>
+                </h3>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Intro section   -->
+<section id="information" class="home-sectioninfo">
+    <div class="home-content">
+        <span class="text">Information</span>
+    </div>
+</section>
+<section class="intro">
+    <div class="container my-3">
+        <div class="row">
+            <!-- Drusen  -->
+            <div class="col-lg-6 col-md-12 intro-image">
+                <h3>Drusen</h3>
+                <img src="/static/image/drusen.jpg" alt="banner-img" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-12 intro-title">
+                <p class="title-text">
+                    Drusen are yellow deposits under the retina. Drusen are made up of lipids and proteins. Drusen
+                    likely do not cause
+                    age-related macular degeneration (AMD). But having drusen increases a person’s risk of developing
+                    AMD, and they may be a
+                    sign of AMD. There are different kinds of drusen. Small drusen may not cause vision problems for a
+                    long time, if at all.
+                    Larger drusen increase the risk for advanced AMD, which can result in vision loss.
+                </p>
+            </div>
+
+            <!-- CNV  -->
+            <div class="col-lg-6 col-md-12 intro-title2">
+                <h3 class="title-text2">CNV (choroidal neovascularization)</h3>
+                <p class="title-text">Choroidal neovascularization (CNV) involves the growth of new blood vessels that
+                    originate from the choroid through a
+                    break in the Bruch membrane into the sub–retinal pigment epithelium (sub-RPE) or subretinal space.
+                    CNV is a major cause
+                    of visual loss.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12 intro-image2">
+                <img src="/static/image/cnv.jpg" alt="banner-img" class="img-fluid">
+            </div>
+
+            <!-- DMC  -->
+            <div class="col-lg-6 col-md-12 intro-image">
+                <h3 class="title-text">DME (Diabetic macular edema )</h3>
+                <img src="/static/image/dme.jpg" alt="banner-img" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-md-12 intro-title">
+
+                <p class="title-text">DME is a complication of diabetes caused by fluid accumulation in the macula that
+                    can affect the fovea. The macula is
+                    the central portion in the retina which is in the back of the eye and where vision is the sharpest.
+                    Vision loss from DME
+                    can progress over a period of months and make it impossible to focus clearly.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- About section   -->
+<section id="about" class="home-section">
+    <div class="home-content">
+        <span class="text">About us</span>
+    </div>
+</section>
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 about-image about-title">
+                <!-- <img src="/static/image/megha.jpg" alt="banner-img" class="img-fluid"> -->
+                <p class="title-text">
+                    Myself Megha Goriya pursuing B.Tech in Information Technology and finding way in Data Science .
+                    Hence have used Deep
+                    Learning Frameworks like Tensorflow and keras to build this project.
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 about-image about-title">
+                <img src="/static/image/megha.jpg" alt="banner-img" class="img-fluid">
+
+            </div>
+           
+
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- <h2>Image Classifier</h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg, .jfif">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div> -->
+
+{% endblock %}
